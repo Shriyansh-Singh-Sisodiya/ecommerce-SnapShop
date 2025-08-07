@@ -1,0 +1,44 @@
+/* 🔤 Font Setup */
+body {
+  background-color: #f7f7f7 ;
+  font-family: 'Poppins', sans-serif !important;
+  color: #1e1e1e ;
+  line-height: 1.6 !important;
+}
+.container, .section {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+/* 🧭 Navbar */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #0e5db1 !important;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 1);
+}
+
+.themeChanger {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.themeChanger:hover {
+  transform: scale(1.1);
+}

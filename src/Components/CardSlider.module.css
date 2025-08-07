@@ -1,0 +1,23 @@
+.cardSliderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 15vh;
+}
+
+.customSwiper {
+  width: 420px;
+  height: 420px;
+  margin-left: 0px;
+  margin-top: -280px;
+}
+
+.customSwiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #0dcaf040;
+  border: skyblue 2px solid;
+
+}

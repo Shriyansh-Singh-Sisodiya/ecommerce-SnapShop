@@ -3,7 +3,7 @@ import { FaMoon } from "react-icons/fa";
 import { CiSun } from "react-icons/ci";
 import { Link } from 'react-router-dom'
 function Navbar() {
-  const [theme,setTheme]=useState(false)
+  const [theme,setTheme]=useState(true)
    useEffect(() => {
      document.body.setAttribute('data-bs-theme', theme ? 'dark' : 'light');
   }, [theme])

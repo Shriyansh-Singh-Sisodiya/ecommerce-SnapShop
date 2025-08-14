@@ -12,6 +12,7 @@ function Contact() {
     e.preventDefault();
     alert("Message sent!");
     console.log(form);
+    setForm({ name: "", email: "", message: "" });
   };
 
   useEffect(() => {
@@ -23,7 +24,8 @@ function Contact() {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <h2 className="text-center mb-4">Contact Us</h2>
-          <form onSubmit={handleSubmit} className="p-4 shadow rounded bg-light">
+
+          <form className="p-4 shadow rounded bg-body-secondary" onSubmit={handleSubmit}>
             <div className="mb-3">
               <input
                 name="name"
@@ -56,10 +58,17 @@ function Contact() {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-primary w-100">
+            <button type="submit" className="btn btn-info w-100 fw-bold">
               Send Message
             </button>
           </form>
+
+          <div className="mt-4 p-3 rounded shadow bg-body-secondary">
+            <h5>Other Ways to Reach Us</h5>
+            <p>Email: <a href="mailto:support@snapshop.com" className="link-info">support@snapshop.com</a></p>
+            <p>Phone: <a href="tel:+918964021179" className="link-info">+91 89640 21179</a></p>
+            <p>Address: 123 Snap-Shop Street, Dewas, India</p>
+          </div>
         </div>
       </div>
     </div>

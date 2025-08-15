@@ -4,7 +4,6 @@ function SignUp() {
   return (
     <div>
       <form>
-
         <div class="mb-3 w-50 mx-auto">
           <h1 className='text-center'>Sign Up Page</h1>
           <input type="email" class="form-control mt-5" placeholder='Enter Your Email' />

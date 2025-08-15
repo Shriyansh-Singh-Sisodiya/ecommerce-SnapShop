@@ -2,17 +2,20 @@ import React, { useContext } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import { CartsContext } from './store/CartsContext';
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 function Carts() {
+  const navigate = useNavigate();
   const { carts, increaseQuantity, decreaseQuantity, getTotalAmount } = useContext(CartsContext);
   const handleCheckout = async () => {
     try {
+       console.log("Checkout clicked");
       const { data } = await axios.post("http://localhost:5000/create-order", {
         amount: getTotalAmount(),
       });
-
+console.log("Order response:", data);
       const options = {
-        key: "rzp_test_1234567890abcdef",
+        key: "rzp_test_R5RmfWrmDQH9H4",
         amount: data.amount,
         currency: "INR",
         name: "Snap-Shop",
@@ -20,6 +23,7 @@ function Carts() {
         order_id: data.id,
         handler: function (response) {
           alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+          navigate("/order-placed");
         },
       };
 
@@ -73,9 +77,9 @@ function Carts() {
 
       <div className="m-5">
         <h3 className="mx-3">Total: ${getTotalAmount().toFixed(2)}</h3>
-        <Link onClick={handleCheckout} to="/order-placed" className="btn btn-success px-5 my-5">
-          Checkout
-        </Link>
+        <button onClick={handleCheckout} className="btn btn-success px-5 my-5">
+        Checkout
+      </button>
       </div>
     </div>
   );
